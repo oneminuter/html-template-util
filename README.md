@@ -22,5 +22,5 @@ html模板和工具
 **setSessionStorage**  
 设置sessionStorage
 
-**getSessionStorage**	
+**getSessionStorage**  
 获取sessionStorage
