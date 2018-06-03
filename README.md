@@ -18,3 +18,9 @@ html模板和工具
 		error: function(err){}		//请求错误回调
 	}
 ```
+
+**setSessionStorage**  
+设置sessionStorage
+
+**getSessionStorage**	
+获取sessionStorage
