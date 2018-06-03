@@ -3,10 +3,10 @@
 ## css 初始化
 
 ## js 常用工具封装
-**formatDate**  
+**formatDate(timestamp)**  
 时间戳（ms）转化为时间字符串
 
-**ajax**
+**ajax(obj)**
 ```
 	obj{
 		url: "",					//请求url
@@ -18,8 +18,8 @@
 	}
 ```
 
-**setSessionStorage**  
+**setSessionStorage(key,value)**  
 设置sessionStorage
 
-**getSessionStorage**  
+**getSessionStorage(key)**  
 获取sessionStorage
