@@ -135,4 +135,8 @@ var util = {
             }   
             return param;
         },
+        //去掉字符串两端的空格
+        trim: function(str) {
+            return str.replace(/(^s*)|(s*$)/g, "");
+        },
 }
