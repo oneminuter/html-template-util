@@ -82,8 +82,37 @@ var util = {
 
             xhr.send();
         },
-        
+        //ajax formData 请求方式
+        ajaxFormData: function(obj) {
+            var form = new FormData();
+            for(var key in obj.data) {
+                form.append(key, obj.data[key]);
+            }
 
+            var xhr = null;
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari 
+                xhr = new XMLHttpRequest();
+            } else { // code for IE6, IE5 
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhr.withCredentials = true;
+            xhr.open(obj.method, obj.url, true);
+            xhr.send(form);
+
+            xhr.addEventListener("readystatechange", function() {
+                if (4 == this.readyState) {
+                    if (200 == this.status) {
+                        var response = JSON.parse(this.responseText);
+                        obj.success(response);
+                    } else {
+                        obj.error(err)
+                    }
+                }
+            });
+            return;
+        },
+        
         //设置sessionStorage
         setSessionStorage: function(key, value) {
             sessionStorage.setItem(key,value);
