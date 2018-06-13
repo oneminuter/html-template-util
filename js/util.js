@@ -93,4 +93,17 @@ var util = {
         getSessionStorage: function(key) {
             return sessionStorage.getItem(key);
         },
+        //获取url参数
+        getUrlParam: function(){
+            var url = location.search; //获取url中"?"符后的字串   
+            var param = new Object();   
+            if (url.indexOf("?") != -1) {   
+                var str = url.substr(1);   
+                strs = str.split("&");   
+                for(var i = 0; i < strs.length; i ++) {   
+                    param[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);   
+                }   
+            }   
+            return param;
+        },
 }
