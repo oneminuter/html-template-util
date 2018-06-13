@@ -39,7 +39,7 @@ var util = {
                         var response = JSON.parse(this.responseText);
                         obj.success(response);
                     } else {
-                        obj.error(err)
+                        obj.error(this.status)
                     }
                 }
             });
@@ -106,7 +106,7 @@ var util = {
                         var response = JSON.parse(this.responseText);
                         obj.success(response);
                     } else {
-                        obj.error(err)
+                        obj.error(this.status)
                     }
                 }
             });
