@@ -56,7 +56,7 @@ var util = {
                 xhr.send(obj.data);
 
                 //处理结束返回
-                return;
+                return xhr;
             }
 
             // get方式
@@ -81,6 +81,7 @@ var util = {
             }
 
             xhr.send();
+            return xhr;
         },
         //ajax formData 请求方式
         ajaxFormData: function(obj) {
@@ -110,7 +111,7 @@ var util = {
                     }
                 }
             });
-            return;
+            return xhr;
         },
         
         //设置sessionStorage
