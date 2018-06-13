@@ -87,7 +87,7 @@ var util = {
         //设置sessionStorage
         setSessionStorage: function(key, value) {
             sessionStorage.setItem(key,value);
-        }
+        },
 
         //获取sessionStorage
         getSessionStorage: function(key) {
