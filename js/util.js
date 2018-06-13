@@ -92,5 +92,5 @@ var util = {
         //获取sessionStorage
         getSessionStorage: function(key) {
             return sessionStorage.getItem(key);
-        }
+        },
 }
