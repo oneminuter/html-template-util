@@ -31,7 +31,7 @@ var util = {
             } else { // code for IE6, IE5 
                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xhr.withCredentials = true;
+            // xhr.withCredentials = true;
 
             xhr.addEventListener("readystatechange", function() {
                 if (4 == this.readyState) {
@@ -97,7 +97,7 @@ var util = {
             } else { // code for IE6, IE5 
                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xhr.withCredentials = true;
+            // xhr.withCredentials = true;
             xhr.open(obj.method, obj.url, true);
             xhr.send(form);
 
