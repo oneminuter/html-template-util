@@ -31,7 +31,7 @@ var util = {
             } else { // code for IE6, IE5 
                 xhr = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            // xhr.withCredentials = true;
+            // xhr.withCredentials = true; //适用于https,携带证书
 
             xhr.addEventListener("readystatechange", function() {
                 if (4 == this.readyState) {
