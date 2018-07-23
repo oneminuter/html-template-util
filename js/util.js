@@ -1,16 +1,28 @@
 var util = {
-	//格式化时间
-    formatDate: function(timestamp) {
-        t = new Date(parseInt(timestamp));
-        y = t.getFullYear();
-        m = t.getMonth() + 1;
-        d = t.getDate();
+	//格式化时间, style:时间格式 YYYY/mm/DD hh:MM:ss
+    formatDate: function(timestamp, style) {
+        style = style ||  "";
+        timestamp = timestamp.toString().length == 10 ? timestamp *= 1000 : timestamp;
+        var t = new Date(parseInt(timestamp));
+        var y = t.getFullYear();
+        var m = t.getMonth() + 1;
+        var d = t.getDate();
 
-        h = t.getHours();
-        min = t.getMinutes();
-        s = t.getSeconds();
+        var h = t.getHours();
+        var min = t.getMinutes();
+        var s = t.getSeconds();
 
-        return y + "/" + m + "/" + d + " " + h + ":" + min;
+        switch(style.toLowerCase()){
+            case "yyyy年mm月dd日":
+                // str = y + "年" + m + "月" + d + "日";
+                return y + "年" + m + "月" + d + "日";
+                break;
+            case "hh:mm":
+                return (h < 10 ? "0"+h : h) + ":" + (min < 10 ? "0"+min : min);
+                break;
+            default:
+                return y + "/" + m + "/" + d + "/ " + (h < 10 ? "0"+h : h) + ":" + (min < 10 ? "0"+min : min) + (s < 10 ? "0"+s : s);
+        }
     },
 
     /* ajax 请求
